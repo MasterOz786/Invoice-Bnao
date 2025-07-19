@@ -6,7 +6,7 @@ interface ClassicTemplateProps {
 }
 
 export default function ClassicTemplate({ invoiceData, currency }: ClassicTemplateProps) {
-  const currencySymbol = CURRENCIES.find(c => c.code === currency)?.symbol || "$";
+  const currencySymbol = CURRENCIES.find(c => c.code === currency)?.symbol || "₨";
   const lineItems = invoiceData.lineItems || [];
   const subtotal = lineItems.reduce((sum, item) => sum + item.amount, 0);
   const taxAmount = (subtotal * (invoiceData.taxRate || 0)) / 100;
@@ -17,7 +17,7 @@ export default function ClassicTemplate({ invoiceData, currency }: ClassicTempla
       {/* Header */}
       <div className="text-center border-b-2 border-gray-800 pb-6 mb-8">
         <h1 className="text-4xl font-bold text-gray-800 mb-2">INVOICE</h1>
-        <p className="text-gray-600 text-lg">Acme Corporation</p>
+        <p className="text-gray-600 text-lg">TechCorp Solutions</p>
         <p className="text-gray-500">Professional Services</p>
         <p className="text-sm text-gray-500 mt-2">Invoice #{invoiceData.number || "INV-001"}</p>
       </div>
@@ -26,19 +26,19 @@ export default function ClassicTemplate({ invoiceData, currency }: ClassicTempla
       <div className="grid grid-cols-2 gap-12 mb-8">
         <div>
           <h3 className="font-bold text-gray-800 mb-3 border-b border-gray-400 pb-1">FROM</h3>
-          <p className="font-semibold text-lg">Acme Corporation</p>
-          <p className="text-gray-600">123 Business St</p>
-          <p className="text-gray-600">San Francisco, CA 94105</p>
-          <p className="text-gray-600">Phone: +1 (555) 123-4567</p>
-          <p className="text-gray-600">Email: contact@acme.com</p>
+          <p className="font-semibold text-lg">TechCorp Solutions</p>
+          <p className="text-gray-600">Plot 123, DHA Phase 6</p>
+          <p className="text-gray-600">Karachi, Sindh 75500</p>
+          <p className="text-gray-600">Phone: +92-21-1234567</p>
+          <p className="text-gray-600">Email: contact@techcorp.pk</p>
         </div>
         
         <div>
           <h3 className="font-bold text-gray-800 mb-3 border-b border-gray-400 pb-1">BILL TO</h3>
-          <p className="font-semibold text-lg">TechStart Inc.</p>
-          <p className="text-gray-600">456 Client Ave</p>
-          <p className="text-gray-600">New York, NY 10001</p>
-          <p className="text-gray-600">billing@techstart.com</p>
+          <p className="font-semibold text-lg">Innovate Business Ltd.</p>
+          <p className="text-gray-600">Office 456, Gulberg III</p>
+          <p className="text-gray-600">Lahore, Punjab 54660</p>
+          <p className="text-gray-600">accounts@innovate.pk</p>
         </div>
       </div>
 

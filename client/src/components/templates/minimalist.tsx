@@ -6,7 +6,7 @@ interface MinimalistTemplateProps {
 }
 
 export default function MinimalistTemplate({ invoiceData, currency }: MinimalistTemplateProps) {
-  const currencySymbol = CURRENCIES.find(c => c.code === currency)?.symbol || "$";
+  const currencySymbol = CURRENCIES.find(c => c.code === currency)?.symbol || "₨";
   const lineItems = invoiceData.lineItems || [];
   const subtotal = lineItems.reduce((sum, item) => sum + item.amount, 0);
   const taxAmount = (subtotal * (invoiceData.taxRate || 0)) / 100;
@@ -21,9 +21,9 @@ export default function MinimalistTemplate({ invoiceData, currency }: Minimalist
           <p className="text-sm text-gray-600">Invoice #{invoiceData.number || "INV-001"}</p>
         </div>
         <div className="text-right text-sm">
-          <p className="font-medium">Acme Corporation</p>
-          <p className="text-gray-600">123 Business St</p>
-          <p className="text-gray-600">San Francisco, CA 94105</p>
+          <p className="font-medium">TechCorp Solutions</p>
+          <p className="text-gray-600">Plot 123, DHA Phase 6</p>
+          <p className="text-gray-600">Karachi, Sindh 75500</p>
         </div>
       </div>
       
@@ -31,9 +31,9 @@ export default function MinimalistTemplate({ invoiceData, currency }: Minimalist
       <div className="grid grid-cols-2 gap-8">
         <div>
           <h3 className="font-semibold text-gray-900 mb-2">BILL TO</h3>
-          <p className="font-medium">TechStart Inc.</p>
-          <p className="text-gray-600 text-sm">456 Client Ave</p>
-          <p className="text-gray-600 text-sm">New York, NY 10001</p>
+          <p className="font-medium">Innovate Business Ltd.</p>
+          <p className="text-gray-600 text-sm">Office 456, Gulberg III</p>
+          <p className="text-gray-600 text-sm">Lahore, Punjab 54660</p>
         </div>
         <div className="text-sm">
           <div className="mb-2">

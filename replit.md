@@ -49,8 +49,9 @@ Save functionality: Disabled until database integration is implemented.
 
 ### Currency System
 - Multi-currency support with real-time conversion rates
-- Supported currencies: USD, EUR, GBP, CAD, AUD, JPY
-- Currency API integration for live exchange rates
+- Base currency: PKR (Pakistani Rupee) - prioritized as default
+- Supported currencies: PKR, USD, EUR, GBP, CAD, AUD, JPY
+- Currency API integration for live exchange rates (mock rates currently)
 
 ### Storage System
 - **Interface-based Design**: IStorage interface for data operations
@@ -133,3 +134,6 @@ The application follows a clean separation of concerns with shared type safety b
 - Added "Preview Mode" badges throughout the interface
 - Modified UI to indicate database persistence is coming soon
 - Maintained full template preview and PDF generation capabilities
+- **Currency Update**: Changed base currency from USD to PKR (Pakistani Rupee)
+- Updated all sample data and templates with Pakistani business context
+- Added realistic PKR exchange rates and Pakistani addresses/phone formats

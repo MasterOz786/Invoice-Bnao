@@ -9,14 +9,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/currency/rates", async (req, res) => {
     try {
       // In a real app, you'd fetch from a currency API like Fixer.io or ExchangeRate-API
-      // For now, we'll return mock rates
+      // For now, we'll return mock rates with PKR as base currency
       const rates = {
-        USD: { EUR: 0.85, GBP: 0.73, CAD: 1.25, AUD: 1.45, JPY: 110 },
-        EUR: { USD: 1.18, GBP: 0.86, CAD: 1.47, AUD: 1.71, JPY: 129 },
-        GBP: { USD: 1.37, EUR: 1.16, CAD: 1.71, AUD: 1.99, JPY: 150 },
-        CAD: { USD: 0.80, EUR: 0.68, GBP: 0.58, AUD: 1.16, JPY: 88 },
-        AUD: { USD: 0.69, EUR: 0.58, GBP: 0.50, CAD: 0.86, JPY: 76 },
-        JPY: { USD: 0.009, EUR: 0.008, GBP: 0.007, CAD: 0.011, AUD: 0.013 },
+        PKR: { USD: 0.0036, EUR: 0.0031, GBP: 0.0026, CAD: 0.0045, AUD: 0.0052, JPY: 0.40 },
+        USD: { PKR: 278.5, EUR: 0.85, GBP: 0.73, CAD: 1.25, AUD: 1.45, JPY: 110 },
+        EUR: { PKR: 327.6, USD: 1.18, GBP: 0.86, CAD: 1.47, AUD: 1.71, JPY: 129 },
+        GBP: { PKR: 381.4, USD: 1.37, EUR: 1.16, CAD: 1.71, AUD: 1.99, JPY: 150 },
+        CAD: { PKR: 222.8, USD: 0.80, EUR: 0.68, GBP: 0.58, AUD: 1.16, JPY: 88 },
+        AUD: { PKR: 192.1, USD: 0.69, EUR: 0.58, GBP: 0.50, CAD: 0.86, JPY: 76 },
+        JPY: { PKR: 2.5, USD: 0.009, EUR: 0.008, GBP: 0.007, CAD: 0.011, AUD: 0.013 },
       };
       
       res.json({ rates, lastUpdated: new Date().toISOString() });

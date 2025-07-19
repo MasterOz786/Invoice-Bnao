@@ -59,10 +59,10 @@ export class MemStorage implements IStorage {
     // Default company
     const defaultCompany: Company = {
       id: this.companyId++,
-      name: "Your Company",
-      address: "123 Business St\nSan Francisco, CA 94105",
-      email: "contact@yourcompany.com",
-      phone: "+1 (555) 123-4567",
+      name: "TechCorp Solutions",
+      address: "Plot 123, DHA Phase 6\nKarachi, Sindh 75500",
+      email: "contact@techcorp.pk",
+      phone: "+92-21-1234567",
       logo: null,
     };
     this.companies.set(defaultCompany.id, defaultCompany);
@@ -70,10 +70,10 @@ export class MemStorage implements IStorage {
     // Sample client
     const sampleClient: Client = {
       id: this.clientId++,
-      name: "Sample Client Inc.",
-      address: "456 Client Ave\nNew York, NY 10001",
-      email: "billing@sampleclient.com",
-      phone: "+1 (555) 987-6543",
+      name: "Innovate Business Ltd.",
+      address: "Office 456, Gulberg III\nLahore, Punjab 54660",
+      email: "accounts@innovate.pk",
+      phone: "+92-42-9876543",
     };
     this.clients.set(sampleClient.id, sampleClient);
   }

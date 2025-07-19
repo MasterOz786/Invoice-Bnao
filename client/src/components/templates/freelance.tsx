@@ -6,7 +6,7 @@ interface FreelanceTemplateProps {
 }
 
 export default function FreelanceTemplate({ invoiceData, currency }: FreelanceTemplateProps) {
-  const currencySymbol = CURRENCIES.find(c => c.code === currency)?.symbol || "$";
+  const currencySymbol = CURRENCIES.find(c => c.code === currency)?.symbol || "₨";
   const lineItems = invoiceData.lineItems || [];
   const subtotal = lineItems.reduce((sum, item) => sum + item.amount, 0);
   const taxAmount = (subtotal * (invoiceData.taxRate || 0)) / 100;
@@ -27,7 +27,7 @@ export default function FreelanceTemplate({ invoiceData, currency }: FreelanceTe
             </div>
           </div>
           <div className="text-right">
-            <p className="font-semibold text-lg">Acme Freelance</p>
+            <p className="font-semibold text-lg">TechCorp Freelance</p>
             <p className="text-green-100 text-sm">Creative Professional</p>
           </div>
         </div>
@@ -39,19 +39,19 @@ export default function FreelanceTemplate({ invoiceData, currency }: FreelanceTe
           <div className="grid grid-cols-2 gap-6">
             <div>
               <h3 className="font-semibold text-green-600 mb-3">FROM</h3>
-              <p className="font-semibold">John Doe</p>
+              <p className="font-semibold">Ahmed Hassan</p>
               <p className="text-gray-600 text-sm">Freelance Designer</p>
-              <p className="text-gray-600 text-sm">123 Creative St</p>
-              <p className="text-gray-600 text-sm">San Francisco, CA 94105</p>
-              <p className="text-gray-600 text-sm">john@acmefreelance.com</p>
+              <p className="text-gray-600 text-sm">House 123, Model Town</p>
+              <p className="text-gray-600 text-sm">Islamabad, ICT 44000</p>
+              <p className="text-gray-600 text-sm">ahmed@techcorp.pk</p>
             </div>
             
             <div>
               <h3 className="font-semibold text-green-600 mb-3">BILL TO</h3>
-              <p className="font-semibold">TechStart Inc.</p>
-              <p className="text-gray-600 text-sm">456 Client Ave</p>
-              <p className="text-gray-600 text-sm">New York, NY 10001</p>
-              <p className="text-gray-600 text-sm">billing@techstart.com</p>
+              <p className="font-semibold">Innovate Business Ltd.</p>
+              <p className="text-gray-600 text-sm">Office 456, Gulberg III</p>
+              <p className="text-gray-600 text-sm">Lahore, Punjab 54660</p>
+              <p className="text-gray-600 text-sm">accounts@innovate.pk</p>
             </div>
           </div>
         </div>

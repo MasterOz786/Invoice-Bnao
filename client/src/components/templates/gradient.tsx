@@ -6,7 +6,7 @@ interface GradientTemplateProps {
 }
 
 export default function GradientTemplate({ invoiceData, currency }: GradientTemplateProps) {
-  const currencySymbol = CURRENCIES.find(c => c.code === currency)?.symbol || "$";
+  const currencySymbol = CURRENCIES.find(c => c.code === currency)?.symbol || "₨";
   const lineItems = invoiceData.lineItems || [];
   const subtotal = lineItems.reduce((sum, item) => sum + item.amount, 0);
   const taxAmount = (subtotal * (invoiceData.taxRate || 0)) / 100;
@@ -22,9 +22,9 @@ export default function GradientTemplate({ invoiceData, currency }: GradientTemp
             <p className="text-blue-100">#{invoiceData.number || "INV-001"}</p>
           </div>
           <div className="text-right">
-            <p className="font-semibold text-lg">Acme Corporation</p>
-            <p className="text-blue-100 text-sm">123 Business St</p>
-            <p className="text-blue-100 text-sm">San Francisco, CA 94105</p>
+            <p className="font-semibold text-lg">TechCorp Solutions</p>
+            <p className="text-blue-100 text-sm">Plot 123, DHA Phase 6</p>
+            <p className="text-blue-100 text-sm">Karachi, Sindh 75500</p>
           </div>
         </div>
       </div>
@@ -35,9 +35,9 @@ export default function GradientTemplate({ invoiceData, currency }: GradientTemp
         <div className="grid grid-cols-2 gap-8 mb-8">
           <div>
             <h3 className="font-semibold text-gray-900 mb-3 text-purple-600">BILL TO</h3>
-            <p className="font-semibold">TechStart Inc.</p>
-            <p className="text-gray-600 text-sm">456 Client Ave</p>
-            <p className="text-gray-600 text-sm">New York, NY 10001</p>
+            <p className="font-semibold">Innovate Business Ltd.</p>
+            <p className="text-gray-600 text-sm">Office 456, Gulberg III</p>
+            <p className="text-gray-600 text-sm">Lahore, Punjab 54660</p>
           </div>
           <div className="text-sm">
             <div className="mb-2">

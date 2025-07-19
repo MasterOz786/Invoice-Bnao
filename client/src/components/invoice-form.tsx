@@ -74,17 +74,17 @@ export default function InvoiceForm({ invoiceData, onInvoiceDataChange, selected
             <div className="space-y-3">
               <Input
                 placeholder="Company Name"
-                defaultValue="Acme Corporation"
+                defaultValue="TechCorp Solutions"
               />
               <Textarea
                 placeholder="Address"
                 rows={3}
-                defaultValue="123 Business St&#10;San Francisco, CA 94105"
+                defaultValue="Plot 123, DHA Phase 6&#10;Karachi, Sindh 75500"
               />
               <Input
                 type="email"
                 placeholder="Email"
-                defaultValue="contact@acme.com"
+                defaultValue="contact@techcorp.pk"
               />
             </div>
           </div>
@@ -94,17 +94,17 @@ export default function InvoiceForm({ invoiceData, onInvoiceDataChange, selected
             <div className="space-y-3">
               <Input
                 placeholder="Client Name"
-                defaultValue="TechStart Inc."
+                defaultValue="Innovate Business Ltd."
               />
               <Textarea
                 placeholder="Address"
                 rows={3}
-                defaultValue="456 Client Ave&#10;New York, NY 10001"
+                defaultValue="Office 456, Gulberg III&#10;Lahore, Punjab 54660"
               />
               <Input
                 type="email"
                 placeholder="Email"
-                defaultValue="billing@techstart.com"
+                defaultValue="accounts@innovate.pk"
               />
             </div>
           </div>

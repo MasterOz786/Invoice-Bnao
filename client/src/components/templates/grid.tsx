@@ -6,7 +6,7 @@ interface GridTemplateProps {
 }
 
 export default function GridTemplate({ invoiceData, currency }: GridTemplateProps) {
-  const currencySymbol = CURRENCIES.find(c => c.code === currency)?.symbol || "$";
+  const currencySymbol = CURRENCIES.find(c => c.code === currency)?.symbol || "₨";
   const lineItems = invoiceData.lineItems || [];
   const subtotal = lineItems.reduce((sum, item) => sum + item.amount, 0);
   const taxAmount = (subtotal * (invoiceData.taxRate || 0)) / 100;
@@ -25,18 +25,18 @@ export default function GridTemplate({ invoiceData, currency }: GridTemplateProp
       <div className="grid grid-cols-2 gap-6 mb-8">
         <div className="bg-gray-50 p-4 rounded-lg">
           <h3 className="font-semibold text-blue-600 mb-3">FROM</h3>
-          <p className="font-semibold">Acme Corporation</p>
-          <p className="text-gray-600 text-sm">123 Business St</p>
-          <p className="text-gray-600 text-sm">San Francisco, CA 94105</p>
-          <p className="text-gray-600 text-sm">contact@acme.com</p>
+          <p className="font-semibold">TechCorp Solutions</p>
+          <p className="text-gray-600 text-sm">Plot 123, DHA Phase 6</p>
+          <p className="text-gray-600 text-sm">Karachi, Sindh 75500</p>
+          <p className="text-gray-600 text-sm">contact@techcorp.pk</p>
         </div>
         
         <div className="bg-gray-50 p-4 rounded-lg">
           <h3 className="font-semibold text-blue-600 mb-3">BILL TO</h3>
-          <p className="font-semibold">TechStart Inc.</p>
-          <p className="text-gray-600 text-sm">456 Client Ave</p>
-          <p className="text-gray-600 text-sm">New York, NY 10001</p>
-          <p className="text-gray-600 text-sm">billing@techstart.com</p>
+          <p className="font-semibold">Innovate Business Ltd.</p>
+          <p className="text-gray-600 text-sm">Office 456, Gulberg III</p>
+          <p className="text-gray-600 text-sm">Lahore, Punjab 54660</p>
+          <p className="text-gray-600 text-sm">accounts@innovate.pk</p>
         </div>
       </div>
 

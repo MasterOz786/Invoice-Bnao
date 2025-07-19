@@ -23,7 +23,7 @@ export default function LineItems({ lineItems, onLineItemsChange, currency }: Li
   const [taxRate, setTaxRate] = useState(10);
   const [discount, setDiscount] = useState(0);
 
-  const currencySymbol = CURRENCIES.find(c => c.code === currency)?.symbol || "$";
+  const currencySymbol = CURRENCIES.find(c => c.code === currency)?.symbol || "₨";
 
   const addLineItem = () => {
     const newItem: LineItem = {

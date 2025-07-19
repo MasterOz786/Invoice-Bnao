@@ -30,13 +30,13 @@ import {
 export default function InvoiceGenerator() {
   const { id } = useParams();
   const { toast } = useToast();
-  const [selectedCurrency, setSelectedCurrency] = useState("USD");
+  const [selectedCurrency, setSelectedCurrency] = useState("PKR");
   const [selectedTemplate, setSelectedTemplate] = useState("minimalist");
   const [invoiceData, setInvoiceData] = useState<Partial<InsertInvoice>>({
     number: `INV-${String(Date.now()).slice(-6)}`,
     issueDate: new Date().toISOString().split('T')[0],
     dueDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
-    currency: "USD",
+    currency: "PKR",
     template: "minimalist",
     companyId: 1,
     clientId: 1,

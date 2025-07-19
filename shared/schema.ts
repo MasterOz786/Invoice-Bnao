@@ -26,7 +26,7 @@ export const invoices = pgTable("invoices", {
   clientId: integer("client_id").references(() => clients.id),
   issueDate: text("issue_date").notNull(),
   dueDate: text("due_date").notNull(),
-  currency: text("currency").notNull().default("USD"),
+  currency: text("currency").notNull().default("PKR"),
   template: text("template").notNull().default("minimalist"),
   subtotal: real("subtotal").notNull().default(0),
   taxRate: real("tax_rate").notNull().default(0),
@@ -91,6 +91,7 @@ export interface InvoiceWithDetails extends Invoice {
 }
 
 export const CURRENCIES = [
+  { code: "PKR", name: "Pakistani Rupee", symbol: "₨" },
   { code: "USD", name: "US Dollar", symbol: "$" },
   { code: "EUR", name: "Euro", symbol: "€" },
   { code: "GBP", name: "British Pound", symbol: "£" },
