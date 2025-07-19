@@ -38,7 +38,10 @@ export default function InvoicePreview({ invoiceData, template, currency }: Invo
     <Card>
       <CardHeader>
         <div className="flex items-center justify-between">
-          <CardTitle>Live Preview</CardTitle>
+          <div>
+            <CardTitle>Live Preview</CardTitle>
+            <p className="text-xs text-gray-500 mt-1">Real-time template preview</p>
+          </div>
           <div className="flex items-center space-x-2">
             <Button variant="ghost" size="sm">
               <ZoomOut size={16} />
@@ -52,8 +55,16 @@ export default function InvoicePreview({ invoiceData, template, currency }: Invo
       </CardHeader>
       <CardContent>
         <div className="bg-gray-100 rounded-lg p-4 max-h-[800px] overflow-auto">
-          <div className="bg-white shadow-sm max-w-2xl mx-auto" style={{ aspectRatio: "8.5/11" }}>
+          <div className="bg-white shadow-sm max-w-2xl mx-auto invoice-preview" style={{ aspectRatio: "8.5/11" }}>
             {renderTemplate()}
+          </div>
+          <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg text-center">
+            <p className="text-xs text-blue-700">
+              💡 This is a live preview. Changes are reflected instantly as you edit.
+            </p>
+            <p className="text-xs text-blue-600 mt-1">
+              Save functionality with database persistence coming soon
+            </p>
           </div>
         </div>
       </CardContent>

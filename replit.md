@@ -2,11 +2,13 @@
 
 ## Overview
 
-This is a full-stack invoice generator application built with React, Express, and TypeScript. The application allows users to create, customize, and manage professional invoices with multiple templates, currency support, and real-time preview functionality.
+This is a full-stack invoice generator application built with React, Express, and TypeScript. The application allows users to create, customize, and preview professional invoices with multiple templates, currency support, and real-time preview functionality. Currently operating in preview mode with database integration planned for future releases.
 
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+Authentication removed: Operating in preview mode without user authentication or session management.
+Save functionality: Disabled until database integration is implemented.
 
 ## System Architecture
 
@@ -52,8 +54,9 @@ Preferred communication style: Simple, everyday language.
 
 ### Storage System
 - **Interface-based Design**: IStorage interface for data operations
-- **In-Memory Implementation**: MemStorage class for development/testing
-- **Database Implementation**: Ready for PostgreSQL integration via Drizzle ORM
+- **In-Memory Implementation**: MemStorage class for preview/demo mode
+- **Database Implementation**: PostgreSQL integration via Drizzle ORM planned for future release
+- **Current State**: Save functionality disabled, operating as preview/demo application
 
 ## Data Flow
 
@@ -122,3 +125,11 @@ Preferred communication style: Simple, everyday language.
 ```
 
 The application follows a clean separation of concerns with shared type safety between frontend and backend, enabling rapid development while maintaining code quality and consistency.
+
+## Recent Changes (January 2025)
+
+- Removed authentication system for simplified preview mode
+- Disabled save functionality with clear user indicators
+- Added "Preview Mode" badges throughout the interface
+- Modified UI to indicate database persistence is coming soon
+- Maintained full template preview and PDF generation capabilities

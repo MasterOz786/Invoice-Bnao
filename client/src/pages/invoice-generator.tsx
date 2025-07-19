@@ -92,15 +92,12 @@ export default function InvoiceGenerator() {
   }, [invoice]);
 
   const handleSave = () => {
-    if (invoiceData.lineItems && invoiceData.lineItems.length > 0) {
-      saveInvoiceMutation.mutate(invoiceData as InsertInvoice);
-    } else {
-      toast({
-        title: "Error",
-        description: "Please add at least one line item",
-        variant: "destructive",
-      });
-    }
+    // Save functionality disabled in preview mode
+    toast({
+      title: "Preview Mode",
+      description: "Save functionality coming soon with database integration",
+      variant: "default",
+    });
   };
 
   const handlePreview = () => {
@@ -194,6 +191,10 @@ export default function InvoiceGenerator() {
             <Plus className="mr-2" size={16} />
             New Invoice
           </Button>
+          <div className="mt-3 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+            <p className="text-xs text-blue-700 font-medium">💡 Preview Mode</p>
+            <p className="text-xs text-blue-600 mt-1">Save & database features coming soon</p>
+          </div>
         </div>
       </div>
 
@@ -204,9 +205,14 @@ export default function InvoiceGenerator() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <h1 className="text-2xl font-semibold text-gray-900">Invoice Generator</h1>
-              <Badge variant="secondary" className="bg-green-100 text-green-800">
-                {TEMPLATES.length} Templates Available
-              </Badge>
+              <div className="flex items-center space-x-2">
+                <Badge variant="secondary" className="bg-green-100 text-green-800">
+                  {TEMPLATES.length} Templates Available
+                </Badge>
+                <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+                  Preview Mode
+                </Badge>
+              </div>
             </div>
             
             <div className="flex items-center space-x-4">
@@ -222,9 +228,6 @@ export default function InvoiceGenerator() {
                   ))}
                 </SelectContent>
               </Select>
-              
-              <div className="w-8 h-8 bg-gray-300 rounded-full"></div>
-              <span className="text-sm font-medium text-gray-900">John Smith</span>
             </div>
           </div>
         </header>
@@ -240,7 +243,7 @@ export default function InvoiceGenerator() {
                   Back to Invoices
                 </Button>
                 <div className="text-sm text-gray-500">
-                  Draft saved 2 minutes ago
+                  Live preview mode
                 </div>
               </div>
               
@@ -255,11 +258,12 @@ export default function InvoiceGenerator() {
                 </Button>
                 <Button 
                   size="sm" 
-                  onClick={handleSave}
-                  disabled={saveInvoiceMutation.isPending}
+                  disabled={true}
+                  className="opacity-50 cursor-not-allowed"
+                  title="Save functionality coming soon - database integration planned"
                 >
                   <Save className="mr-2" size={16} />
-                  {saveInvoiceMutation.isPending ? "Saving..." : "Save Invoice"}
+                  Save Invoice (Coming Soon)
                 </Button>
               </div>
             </div>
